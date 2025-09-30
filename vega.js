@@ -1,7 +1,9 @@
 var vg_1 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 850,
-  "height": 520,
+
+  "autosize": { "type": "fit", "contains": "padding" },
+  "width": "container",
+  "height": "container",
 
   "title": {
     "text": "Malaysia's Secondary School Average Non-Completion Rate by State (2016-2022)",
