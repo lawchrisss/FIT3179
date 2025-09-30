@@ -1,15 +1,13 @@
 var vg_1 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-  "autosize": { "type": "fit", "contains": "padding" },
-  "width": "container",
-  "height": "container",
+  "width": 850,
+  "height": 520,
 
   "title": {
     "text": "Malaysia's Secondary School Average Non-Completion Rate by State (2016-2022)",
     "fontSize": 18,
     "subtitleFontSize": 12,
-    "anchor": "start"
+    "anchor": "middle"
   },
 
   "projection": {
@@ -21,8 +19,15 @@ var vg_1 = {
 
   "layer": [
     {
-      "data": { "graticule": { "extent": [[95, -1], [121, 8]], "step": [1, 1] } },
-      "mark": { "type": "geoshape", "fill": null, "stroke": "#e6e6e6", "strokeWidth": 0.8 }
+      "data": {
+        "graticule": { "extent": [[95, -1], [121, 8]], "step": [1, 1] }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#e6e6e6",
+        "strokeWidth": 0.8
+      }
     },
     {
       "data": {
@@ -38,12 +43,19 @@ var vg_1 = {
               "format": { "type": "csv" }
             },
             "key": "state",
-            "fields": ["avg_completion","non_completion"]
+            "fields": ["avg_completion", "non_completion"]
           }
         },
-        { "calculate": "datum.properties.Name === 'Penang' ? 'Pulau Pinang' : datum.properties.Name", "as": "state_for_tooltip" }
+        {
+          "calculate": "datum.properties.Name === 'Penang' ? 'Pulau Pinang' : datum.properties.Name",
+          "as": "state_for_tooltip"
+        }
       ],
-      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 0.5 },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 0.5
+      },
       "encoding": {
         "color": {
           "field": "non_completion",
